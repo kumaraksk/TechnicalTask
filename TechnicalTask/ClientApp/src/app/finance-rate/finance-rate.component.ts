@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { parse } from 'path';
 import { SharedService } from '../shared.service';
 @Component({
     selector: 'app-finance-rate',
