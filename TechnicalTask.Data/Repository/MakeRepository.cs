@@ -31,5 +31,42 @@ namespace TechnicalTask.Data.Repository
                 throw ex;
             }
         }
+
+        public void Delete(Make make)
+        {
+            try
+            {
+                _dbContext.Makes.Remove(make);
+                _dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public Make GetById(int id)
+        {
+            try
+            {
+                return _dbContext.Makes.Find(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void Update(Make make)
+        {
+            try
+            {
+                _dbContext.Makes.Update(make);
+                _dbContext.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

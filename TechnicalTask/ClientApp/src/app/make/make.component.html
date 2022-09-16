@@ -1,0 +1,43 @@
+
+<form [formGroup]="makeForm" (ngSubmit)="this[EventValue]()">
+   
+    <div class="row"  style="margin-bottom: 30px;">
+        <div class="col-md-1">
+            <label class="label"><b>Name</b></label>
+        </div>
+        <div class="col-md-7">
+            <input type="hidden" formControlName="Id">
+            <input type="text" formControlName="Name" class="form-control">
+            <div *ngIf="submitted && makeForm.controls.Name.errors" class="text-danger">
+                <div *ngIf="makeForm.controls.Name.errors.required">Name is required</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn  btn-primary">{{EventValue}}</button>
+        </div>
+    </div>
+   
+
+    <div class="row container-fluid">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>
+                        Name
+                    </td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+           
+            <tr *ngFor="let d of makes">
+                <td>{{d.Id}}</td>
+                <td>{{d.Name}}</td>
+                <td><a (click)="EditData(d)" class="btn btn-warning">Edit</a></td>
+                <td><a (click)="deleteData(d.Id)" class="btn btn-danger">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</form>
+

@@ -10,5 +10,8 @@ namespace TechnicalTask.Service.Interface
     {
         public Task<Make> AddMake(Make make);
         public IEnumerable<Make> GetMakes();
+        public void Delete(int id);
+        public Make GetById(int id);
+        public void Update(Make make);
     }
 }

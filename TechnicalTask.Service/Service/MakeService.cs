@@ -24,5 +24,18 @@ namespace TechnicalTask.Service.Service
         {
             return _make.GetAll();
         }
+        public void Delete(int id)
+        {
+            var make = _make.GetById(id);
+            _make.Delete(make);
+        }
+        public Make GetById(int id)
+        {
+            return _make.GetById(id);
+        }
+        public void Update(Make make)
+        {
+             _make.Update(make);
+        }
     }
 }

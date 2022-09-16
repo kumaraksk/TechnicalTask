@@ -11,7 +11,8 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FinanceRateComponent } from './finance-rate/finance-rate.component';
 import { SharedService } from './shared.service';
-
+import { MakeComponent } from './make/make.component'
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
     declarations: [
         AppComponent,
@@ -19,16 +20,19 @@ import { SharedService } from './shared.service';
         HomeComponent,
         CounterComponent,
         FetchDataComponent,
-        FinanceRateComponent
+        FinanceRateComponent,
+        MakeComponent,
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
         HttpClientModule,
         FormsModule,
+        ReactiveFormsModule,
         RouterModule.forRoot([
             { path: '', component: FinanceRateComponent, pathMatch: 'full' },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'make', component: MakeComponent },
         ])
     ],
     providers: [SharedService],

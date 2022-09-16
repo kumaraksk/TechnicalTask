@@ -15,7 +15,7 @@ namespace TechnicalTask.Controllers
         public MakeController(IMake makeService)
         {
             _makeService = makeService;
-        }  
+        }
         [HttpPost("Make")]
         public async Task<Make> AddMake([FromBody] Make make)
         {
@@ -27,7 +27,7 @@ namespace TechnicalTask.Controllers
             {
                 throw ex;
             }
-        } 
+        }
         [HttpGet("Makes")]
         public Object GetMakes()
         {
@@ -38,6 +38,32 @@ namespace TechnicalTask.Controllers
                     ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
                 }
             );
+        }
+        [HttpDelete("Delete")]
+        public bool DeleteMake(int id)
+        {
+            try
+            {
+                _makeService.Delete(id);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        [HttpPut("Update")]
+        public bool Update([FromBody] Make make)
+        {
+            try
+            {
+                _makeService.Update(make);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

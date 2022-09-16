@@ -18,4 +18,17 @@ export class SharedService {
     getFinanceTypes() {
         return this.http.get(this.baseUrl + '/api/FinanceRateType/FinanceRateTypes');
     }
+    saveMake(make) {
+        return this.http.post(this.baseUrl + '/api/Make/Make', make);
+    }
+    getMakes() {
+        return this.http.get(this.baseUrl + '/api/Make/Makes');
+    }
+    deleteData(id) {
+        return this.http.delete(this.baseUrl + '/api/Make/Delete?id=' + id);
+    }
+    update(make) {
+        return this.http.put(this.baseUrl + '/api/Make/Update',make);
+    }
+
 }

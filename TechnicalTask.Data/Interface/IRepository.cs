@@ -8,10 +8,10 @@ namespace TechnicalTask.Data.Repository
         public Task<T> Create(T _object);
         public IEnumerable<T> GetAll();
 
-        //public void Update(T _object);
+        public void Update(T _object);
 
-        //public T GetById(int Id);
+        public T GetById(int Id);
 
-        //public void Delete(T _object);
+        public void Delete(T _object);
     }
 }

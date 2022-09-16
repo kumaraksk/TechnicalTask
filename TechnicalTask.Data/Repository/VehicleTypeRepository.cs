@@ -30,5 +30,40 @@ namespace TechnicalTask.Data.Repository
                 throw ex;
             }
         }
+        public void Delete(VehicleType make)
+        {
+            try
+            {
+                _dbContext.VehicleTypes.Remove(make);
+                _dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public VehicleType GetById(int id)
+        {
+            try
+            {
+                return _dbContext.VehicleTypes.Find(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void Update(VehicleType make)
+        {
+            try
+            {
+                _dbContext.VehicleTypes.Update(make);
+                _dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

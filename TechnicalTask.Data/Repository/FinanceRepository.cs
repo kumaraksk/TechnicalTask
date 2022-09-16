@@ -38,5 +38,41 @@ namespace TechnicalTask.Data.Repository
                 throw ex;
             }
         }
+
+        public void Delete(Finance make)
+        {
+            try
+            {
+                _dbContext.Finances.Remove(make);
+                _dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public Finance GetById(int id)
+        {
+            try
+            {
+                return _dbContext.Finances.Find(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void Update(Finance make)
+        {
+            try
+            {
+                _dbContext.Finances.Update(make);
+                _dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -30,5 +30,41 @@ namespace TechnicalTask.Data.Repository
                 throw ex;
             }
         }
+
+        public void Delete(FinanceRateType make)
+        {
+            try
+            {
+                _dbContext.FinanceRateTypes.Remove(make);
+                _dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public FinanceRateType GetById(int id)
+        {
+            try
+            {
+                return _dbContext.FinanceRateTypes.Find(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void Update(FinanceRateType make)
+        {
+            try
+            {
+                _dbContext.FinanceRateTypes.Update(make);
+                _dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
